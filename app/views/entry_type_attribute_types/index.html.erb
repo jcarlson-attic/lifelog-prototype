@@ -1,0 +1,24 @@
+<h1>Listing entry_type_attribute_types</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Entry type</th>
+    <th>Attribute type</th>
+  </tr>
+
+<% for entry_type_attribute_type in @entry_type_attribute_types %>
+  <tr>
+    <td><%=h entry_type_attribute_type.id %></td>
+    <td><%=h entry_type_attribute_type.entry_type.name %></td>
+    <td><%=h entry_type_attribute_type.attribute_type.name %></td>
+    <td><%= link_to 'Show', entry_type_attribute_type %></td>
+    <td><%= link_to 'Edit', edit_entry_type_attribute_type_path(entry_type_attribute_type) %></td>
+    <td><%= link_to 'Destroy', entry_type_attribute_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Attribute Type Association', new_entry_type_attribute_type_path %>

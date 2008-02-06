@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  entry_type_id: 1
+  name: MyString
+  collection: false
+
+two:
+  id: 1
+  entry_type_id: 1
+  name: MyString
+  collection: false

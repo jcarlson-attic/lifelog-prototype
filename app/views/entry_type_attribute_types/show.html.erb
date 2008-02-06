@@ -1,0 +1,18 @@
+<p>
+  <b>Id:</b>
+  <%=h @entry_type_attribute_type.id %>
+</p>
+
+<p>
+  <b>Entry type:</b>
+  <%=h @entry_type_attribute_type.entry_type_id %>
+</p>
+
+<p>
+  <b>Attribute type:</b>
+  <%=h @entry_type_attribute_type.attribute_type_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_entry_type_attribute_type_path(@entry_type_attribute_type) %> |
+<%= link_to 'Back', entry_type_attribute_types_path %>

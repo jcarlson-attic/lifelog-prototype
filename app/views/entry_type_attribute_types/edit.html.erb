@@ -1,0 +1,22 @@
+<h1>Editing entry_type_attribute_type</h1>
+
+<%= error_messages_for :entry_type_attribute_type %>
+
+<% form_for(@entry_type_attribute_type) do |f| %>
+  <p>
+    <b>Entry type</b><br />
+    <%= f.text_field :entry_type_id %>
+  </p>
+
+  <p>
+    <b>Attribute type</b><br />
+    <%= f.text_field :attribute_type_id %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @entry_type_attribute_type %> |
+<%= link_to 'Back', entry_type_attribute_types_path %>

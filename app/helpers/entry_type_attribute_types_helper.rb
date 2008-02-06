@@ -1,0 +1,2 @@
+module EntryTypeAttributeTypesHelper
+end

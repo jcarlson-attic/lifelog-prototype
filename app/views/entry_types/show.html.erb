@@ -1,0 +1,19 @@
+<p>
+  <b>Id:</b>
+  <%=h @entry_type.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @entry_type.name %>
+</p>
+
+<p>
+  <b>Complex:</b>
+  <%=h @entry_type.complex %>
+</p>
+
+
+<%= link_to 'Edit', edit_entry_type_path(@entry_type) %> |
+<%= link_to 'Back', entry_types_path %> |
+<%= link_to 'Add Attribute Association', new_entry_type_attribute_type_path %>

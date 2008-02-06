@@ -1,0 +1,24 @@
+<h1>Listing attributes</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Attribute type</th>
+    <th>Entry</th>
+  </tr>
+
+<% for attribute in @attributes %>
+  <tr>
+    <td><%=h attribute.id %></td>
+    <td><%=h attribute.attribute_type_id %></td>
+    <td><%=h attribute.entry_id %></td>
+    <td><%= link_to 'Show', attribute %></td>
+    <td><%= link_to 'Edit', edit_attribute_path(attribute) %></td>
+    <td><%= link_to 'Destroy', attribute, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New attribute', new_attribute_path %>
