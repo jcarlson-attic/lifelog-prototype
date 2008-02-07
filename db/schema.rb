@@ -12,8 +12,8 @@
 ActiveRecord::Schema.define(:version => 6) do
 
   create_table "attribute_types", :force => true do |t|
-    t.integer  "entry_type_id"
     t.string   "name"
+    t.integer  "entry_type_id"
     t.boolean  "collection"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(:version => 6) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "entry_type_attribute_types", ["entry_type_id", "attribute_type_id"], :name => "index_entry_type_attribute_types_on_entry_type_id_and_attribute_type_id"
 
   create_table "entry_types", :force => true do |t|
     t.string   "name"

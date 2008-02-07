@@ -6,7 +6,7 @@ class CreateEntryTypeAttributeTypes < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index entry_type_attribute_types, [:entry_type_id, :attribute_type_id]
+    add_index :entry_type_attribute_types, [:entry_type_id, :attribute_type_id]
   end
 
   def self.down

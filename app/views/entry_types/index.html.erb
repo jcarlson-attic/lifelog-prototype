@@ -1,17 +1,15 @@
-<h1>Listing entry_types</h1>
+<h1>Available Entry Types</h1>
 
 <table>
   <tr>
-    <th>Id</th>
     <th>Name</th>
     <th>Complex</th>
   </tr>
 
 <% for entry_type in @entry_types %>
   <tr>
-    <td><%=h entry_type.id %></td>
     <td><%=h entry_type.name %></td>
-    <td><%=h entry_type.complex %></td>
+    <td><%=h (entry_type.complex ? 'Y' : 'N') %></td>
     <td><%= link_to 'Show', entry_type %></td>
     <td><%= link_to 'Edit', edit_entry_type_path(entry_type) %></td>
     <td><%= link_to 'Destroy', entry_type, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -22,4 +20,5 @@
 <br />
 
 <%= link_to 'New Entry Type', new_entry_type_path %><br />
-<%= link_to 'Jump to Attribute Types', attribute_types_path %>
+<%= link_to 'Jump to Attribute Types', attribute_types_path %><br />
+<%= link_to 'Add Attribute Type Association', new_entry_type_attribute_type_path %>

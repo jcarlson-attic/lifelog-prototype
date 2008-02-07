@@ -1,8 +1,7 @@
-<h1>Listing attribute_types</h1>
+<h1>Available Attribute Types</h1>
 
 <table>
   <tr>
-    <th>Id</th>
     <th>Name</th>
     <th>Entry type</th>
     <th>Collection</th>
@@ -10,10 +9,9 @@
 
 <% for attribute_type in @attribute_types %>
   <tr>
-    <td><%=h attribute_type.id %></td>
     <td><%=h attribute_type.name %></td>
     <td><%=h attribute_type.entry_type.name %></td>
-    <td><%=h attribute_type.collection %></td>
+    <td><%=h (attribute_type.collection ? 'Y' : 'N') %></td>
     <td><%= link_to 'Show', attribute_type %></td>
     <td><%= link_to 'Edit', edit_attribute_type_path(attribute_type) %></td>
     <td><%= link_to 'Destroy', attribute_type, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -24,4 +22,5 @@
 <br />
 
 <%= link_to 'New Attribute Type', new_attribute_type_path %><br />
-<%= link_to 'Jump to Entry Types', entry_types_path %>
+<%= link_to 'Jump to Entry Types', entry_types_path %><br />
+<%= link_to 'Add Attribute Type Association', new_entry_type_attribute_type_path %>
