@@ -1,3 +1,5 @@
+<h1>Entry Type Details</h1>
+
 <p>
   <b>Id:</b>
   <%=h @entry_type.id %>
@@ -13,6 +15,15 @@
   <%=h @entry_type.complex %>
 </p>
 
+<h3>Attributes Contained in this Entry Type</h3>
+<div>
+	<%= render :partial => 'attribute_type', :collection => @entry_type.entry_type_attribute_types.collect{|etat| etat.attribute_type} %>
+</div>
+
+<h3>Attributes Pointing to this Entry Type</h3>
+<div>
+	<%= render :partial => 'attribute_type', :collection => @entry_type.attribute_types %>
+</div>
 
 <%= link_to 'Edit', edit_entry_type_path(@entry_type) %> |
 <%= link_to 'Back', entry_types_path %>
