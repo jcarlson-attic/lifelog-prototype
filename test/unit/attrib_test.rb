@@ -32,6 +32,18 @@ class AttribTest < ActiveSupport::TestCase
   def test_has_attrib_value
     attrib = Attrib.find(1)
     assert !attrib.value.nil?
+    assert_equal 'Jarrod', attrib.value.attrib_value
+  end
+  
+  def test_has_entry_value
+    attrib = Attrib.find(3)
+    assert !attrib.value.nil?
+    assert_equal Entry.find(1), attrib.value.entry
+  end
+  
+  def test_attrib_value
+    simple_attrib = Attrib.find(1)
+    assert_equal AttribValue.find(1).attrib_value, simple_attrib.display_text
   end
 
 end
