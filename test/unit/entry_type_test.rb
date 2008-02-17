@@ -8,8 +8,8 @@ class EntryTypeTest < ActiveSupport::TestCase
   
   def test_entry_type
     et = EntryType.find(1)
-    
     assert_not_nil et
+    
     assert et.has_attribute?(:name)
     assert_equal 'String', et.name
     
@@ -26,6 +26,9 @@ class EntryTypeTest < ActiveSupport::TestCase
   def test_has_attrib_types
     name = EntryType.find(2)
     assert_equal 2, name.attrib_types.size
+    
+    assert_equal AttribType.find(1), name.attrib_types.find(1)
+    assert_equal AttribType.find(2), name.attrib_types.find(2)
   end
 
 end

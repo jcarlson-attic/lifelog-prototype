@@ -18,10 +18,12 @@ class AttribTypeTest < ActiveSupport::TestCase
     
     assert at.has_attribute?(:collection)
     assert_equal false, at.collection
-    
+  end
+  
+  def test_has_entry_type
+    at = AttribType.find(1)
     assert !at.entry_type.nil?
     assert_equal EntryType.find(1), at.entry_type
-    
   end
 
 end
