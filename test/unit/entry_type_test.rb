@@ -1,15 +1,21 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
 class EntryTypeTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
   
   def test_count
     assert_equal 2, EntryType.count
   end
   
-  def test_find_string
-    string = EntryType.find(1)
-    assert_not_nil string
+  def test_entry_type
+    et = EntryType.find(1)
+    
+    assert_not_nil et
+    assert et.has_attribute?(:name)
+    assert_equal 'String', et.name
+    
+    assert et.has_attribute?(:complex)
+    assert_equal false, et.complex
+    
   end
   
   def test_has_no_attrib_types
@@ -21,4 +27,5 @@ class EntryTypeTest < ActiveSupport::TestCase
     name = EntryType.find(2)
     assert_equal 2, name.attrib_types.size
   end
+
 end
