@@ -1,7 +1,7 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-# one:
-#   column: value
-#
-# two:
-#   column: value
+first:
+	attribute_id: 1
+	attribute_value: Jarrod
+	
+last:
+	attribute_id: 2
+	attribute_value: Carlson

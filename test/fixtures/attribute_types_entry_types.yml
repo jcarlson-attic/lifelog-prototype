@@ -1,0 +1,7 @@
+firstname_fullname:
+	attribute_type_id: 1
+	entry_type_id: 2
+	
+lastname_fullname:
+	attribute_type_id: 2
+	entry_type_id: 2
