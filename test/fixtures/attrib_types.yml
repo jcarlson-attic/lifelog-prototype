@@ -1,0 +1,11 @@
+firstname:
+  id: 1
+  entry_type_id: 1
+  name: First Name
+  collection: f
+
+lastname:
+  id: 2
+  entry_type_id: 1
+  name: Last Name
+  collection: f

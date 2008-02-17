@@ -1,9 +1,9 @@
 string:
-	id: 1
-	name: String
-	complex: t
-	
+  id: 1
+  name: String
+  complex: t
+
 fullname:
-	id: 2
-	name: Full Name
-	complex: t
+  id: 2
+  name: Full Name
+  complex: t

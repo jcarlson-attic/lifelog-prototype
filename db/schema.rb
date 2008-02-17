@@ -11,9 +11,24 @@
 
 ActiveRecord::Schema.define(:version => 1) do
 
+  create_table "attrib_types", :force => true do |t|
+    t.string   "name"
+    t.boolean  "collection"
+    t.integer  "entry_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "attrib_types_entry_types", :id => false, :force => true do |t|
+    t.integer "attrib_type_id"
+    t.integer "entry_type_id"
+  end
+
+  add_index "attrib_types_entry_types", ["attrib_type_id", "entry_type_id"], :name => "index_attrib_types_entry_types_on_attrib_type_id_and_entry_type_id", :unique => true
+
   create_table "attrib_values", :id => false, :force => true do |t|
     t.integer  "attrib_id"
-    t.string   "attribute_value"
+    t.string   "attrib_value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -22,27 +37,12 @@ ActiveRecord::Schema.define(:version => 1) do
 
   create_table "attribs", :force => true do |t|
     t.integer  "entry_id"
-    t.integer  "attribute_type_id"
+    t.integer  "attrib_type_id"
     t.integer  "value_id"
-    t.string   "value_type",        :default => "AttribValue"
+    t.string   "value_type",     :default => "AttribValue"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "attribute_types", :force => true do |t|
-    t.string   "name"
-    t.boolean  "collection"
-    t.integer  "entry_type_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "attribute_types_entry_types", :id => false, :force => true do |t|
-    t.integer "attribute_type_id"
-    t.integer "entry_type_id"
-  end
-
-  add_index "attribute_types_entry_types", ["attribute_type_id", "entry_type_id"], :name => "index_attribute_types_entry_types_on_attribute_type_id_and_entry_type_id", :unique => true
 
   create_table "entries", :force => true do |t|
     t.integer  "entry_type_id"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 1) do
 
   create_table "entry_values", :id => false, :force => true do |t|
     t.integer  "attrib_id"
-    t.integer  "attribute_entry_id"
+    t.integer  "attrib_entry_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

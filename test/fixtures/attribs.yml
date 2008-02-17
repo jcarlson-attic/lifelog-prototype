@@ -1,13 +1,13 @@
 fname:
-	id: 1
-	attribute_type_id: 1
-	entry_id: 1
-	value_id: 1
-	value_type: AttribValue
-	
+  id: 1
+  attrib_type_id: 1
+  entry_id: 1
+  value_id: 1
+  value_type: AttribValue
+
 lname:
-	id: 2
-	attribute_type_id: 2
-	entry_id: 1
-	value_id: 2
-	value_type: AttribValue
+  id: 2
+  attrib_type_id: 2
+  entry_id: 1
+  value_id: 2
+  value_type: AttribValue
