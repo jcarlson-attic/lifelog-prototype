@@ -5,3 +5,7 @@ firstname_fullname:
 lastname_fullname:
   attrib_type_id: 2
   entry_type_id: 2
+
+name_person:
+  attrib_type_id: 3
+  entry_type_id: 3

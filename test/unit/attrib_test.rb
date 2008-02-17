@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../test_helper'
 class AttribTest < ActiveSupport::TestCase
 
   def test_count
-    assert_equal 2, Attrib.count
+    assert_equal 3, Attrib.count
   end
   
   def test_attrib
@@ -27,6 +27,11 @@ class AttribTest < ActiveSupport::TestCase
     attrib = Attrib.find(1)
     assert !attrib.attrib_type.nil?
     assert_equal AttribType.find(1), attrib.attrib_type
+  end
+  
+  def test_has_attrib_value
+    attrib = Attrib.find(1)
+    assert !attrib.value.nil?
   end
 
 end

@@ -30,14 +30,14 @@ class CreateInitialFields < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :attrib_values, :id => false do |t|
+    create_table :attrib_values do |t|
       t.references :attrib
       t.string :attrib_value
       t.timestamps
     end
     add_index :attrib_values, [:attrib_id], :unique => true
 
-    create_table :entry_values, :id => false do |t|
+    create_table :entry_values do |t|
       t.references :attrib
       t.integer :attrib_entry_id
       t.timestamps

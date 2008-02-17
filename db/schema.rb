@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 1) do
 
   add_index "attrib_types_entry_types", ["attrib_type_id", "entry_type_id"], :name => "index_attrib_types_entry_types_on_attrib_type_id_and_entry_type_id", :unique => true
 
-  create_table "attrib_values", :id => false, :force => true do |t|
+  create_table "attrib_values", :force => true do |t|
     t.integer  "attrib_id"
     t.string   "attrib_value"
     t.datetime "created_at"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 1) do
     t.datetime "updated_at"
   end
 
-  create_table "entry_values", :id => false, :force => true do |t|
+  create_table "entry_values", :force => true do |t|
     t.integer  "attrib_id"
     t.integer  "attrib_entry_id"
     t.datetime "created_at"

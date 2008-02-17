@@ -9,3 +9,9 @@ lastname:
   entry_type_id: 1
   name: Last Name
   collection: f
+
+name:
+  id: 3
+  entry_type_id: 3
+  name: Name
+  collection: f

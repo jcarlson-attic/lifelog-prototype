@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../test_helper'
 class EntryTypeTest < ActiveSupport::TestCase
   
   def test_count
-    assert_equal 2, EntryType.count
+    assert_equal 3, EntryType.count
   end
   
   def test_entry_type

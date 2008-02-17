@@ -7,3 +7,8 @@ fullname:
   id: 2
   name: Full Name
   complex: t
+
+person:
+  id: 3
+  name: Person
+  complex: t
