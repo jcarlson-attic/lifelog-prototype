@@ -18,3 +18,10 @@ name:
   entry_id: 2
   value_id: 1
   value_type: EntryValue
+  
+firstnameonly:
+  id: 4
+  attrib_type_id: 1
+  entry_id: 3
+  value_id: 3
+  value_type: AttribValue

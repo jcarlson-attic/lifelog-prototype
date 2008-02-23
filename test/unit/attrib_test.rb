@@ -2,10 +2,6 @@ require File.dirname(__FILE__) + '/../test_helper'
 
 class AttribTest < ActiveSupport::TestCase
 
-  def test_count
-    assert_equal 3, Attrib.count
-  end
-  
   def test_attrib
     attrib = Attrib.find(1)
     assert_not_nil attrib
