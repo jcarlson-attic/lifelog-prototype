@@ -1,0 +1,15 @@
+<h1>AttribType Details</h1>
+
+<p>
+  <b>Name:</b>
+  <%=h @attrib_type.name %>
+</p>
+
+<p>
+  <b>EntryType:</b>
+  <%=link_to @attrib_type.entry_type.name, entry_type_path(@attrib_type.entry_type) %>
+</p>
+
+
+<%= link_to 'Edit', edit_attrib_type_path(@attrib_type) %> |
+<%= link_to 'Back', attrib_types_path %>

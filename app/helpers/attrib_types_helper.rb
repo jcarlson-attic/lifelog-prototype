@@ -1,0 +1,2 @@
+module AttribTypesHelper
+end

@@ -9,3 +9,23 @@
 	<b>Complex:</b>
 	<%= @entry_type.complex %>
 </p>
+
+<h3>Attributes Contained in this Entry Type</h3>
+<div>
+	<%= render :partial => 'attrib_type', :collection => @entry_type.attrib_types, :locals => { :entry_type_id => @entry_type.id } %>
+</div>
+
+<% if @entry_type.complex %>
+	<% form_for(@entry_type, :url => entry_type_add_attrib_type_path(@entry_type), :html => { :method => :post }) do |f| %>
+	  <p>
+	    <b>Attribute type</b><br />
+		<%= f.hidden_field :id %>
+	    <%= select :attrib_type, :id, @available_attrib_types, { :prompt => true } %>
+	  </p>
+	  <p>
+	    <%= f.submit "Add" %>
+	  </p>
+	<% end %>
+<% else %>
+	<p>Simple Entry Types cannot have attributes.</p>
+<% end %>
