@@ -1,0 +1,19 @@
+<h1>Edit Entry Type</h1>
+
+<%= error_messages_for :entry_type %>
+
+<% form_for(@entry_type) do |f| %>
+  <p>
+    <b>Name:</b>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Complex:</b>
+    <%= f.check_box :complex %>
+  </p>
+
+  <p>
+    <%= f.submit "Edit" %>
+  </p>
+<% end %>

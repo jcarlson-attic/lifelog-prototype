@@ -1,6 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
   
-  map.resources :entry_types
+  map.resources :entry_types do |entry_type|
+    #entry_type.resources :attribute_types, :member => { :add => :post, :remove => :delete }
+    entry_type.add_attribute_type 'add_attribute_type', :controller => 'entry_types', :action => 'add', :conditions => { :method => :post }
+    entry_type.drop_attribute_type ':attribute_type_id', :controller => 'entry_types', :action => 'drop', :conditions => { :method => :delete }
+    entry_type.attribute_types 'attribute_types', :controller => 'attribute_types', :conditions => { :method => :get }
+    entry_type.attribute_type ':attribute_type_id', :controller => 'attribute_types', :action => 'show', :conditions => { :method => :get }
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
 

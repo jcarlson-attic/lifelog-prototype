@@ -11,9 +11,17 @@
 			<tr>
 				<td><%= entry_type.name %></td>
 				<td><%= entry_type.attrib_types.size %></td>
-				<td><em>none</em></td>
+				<td>
+					<%= link_to 'Show', entry_type %> |
+					<%= link_to 'Edit', edit_entry_type_path(entry_type) %> |
+					<%= link_to 'Delete', entry_type, :confirm => 'Are you sure?', :method => :delete %>
+				</td>
 			</tr>
 		<% end %>
 	</tbody>
 	
 </table>
+
+<p>
+	<%= link_to 'New', new_entry_type_path %>
+</p>
