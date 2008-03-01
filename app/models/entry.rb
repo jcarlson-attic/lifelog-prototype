@@ -18,7 +18,7 @@ class Entry < ActiveRecord::Base
       return false if nil == attribs.find(:first, :conditions => "attrib_type_id = #{expected.id}")
     end
     
-    return true
+    true
    
   end
   
@@ -32,9 +32,6 @@ class Entry < ActiveRecord::Base
     missing = expected_types.select {|expected|
       nil == attribs.find(:first, :conditions => "attrib_type_id = #{expected.id}")
     }
-    
-    return missing
-
   end
   
 end

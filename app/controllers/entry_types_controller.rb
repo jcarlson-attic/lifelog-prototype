@@ -51,7 +51,7 @@ class EntryTypesController < ApplicationController
   end
 
   def update
-    @entry_type = EntryType.new(params[:entry_type])
+    @entry_type = EntryType.find(params[:id])
 
     respond_to do |format|
       if @entry_type.update_attributes(params[:entry_type])

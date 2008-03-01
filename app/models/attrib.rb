@@ -10,4 +10,10 @@ class Attrib < ActiveRecord::Base
       value.entry.display_text
     end
   end
+  
+  # TODO: Define the value setting method
+  # so that it can determine whether the 
+  # attrib_value should be set or the 
+  # entry_value.
+  
 end

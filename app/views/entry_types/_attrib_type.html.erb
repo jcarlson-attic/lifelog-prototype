@@ -3,11 +3,11 @@
 		<b>Name:</b>
 		<%= link_to attrib_type.name, attrib_type_path(attrib_type) %>
 		(<%= link_to attrib_type.entry_type.name, entry_type_path(attrib_type.entry_type) %>)
-		(<%= link_to 'Destroy', entry_type_drop_attrib_type_path(entry_type_id,attrib_type.id), :confirm => 'Are you sure?', :method => :delete %>)
+		(<%= link_to 'Delete', entry_type_drop_attrib_type_path(entry_type_id,attrib_type.id), :confirm => 'Are you sure?', :method => :delete %>)
 	</p>
 	<% if attrib_type.entry_type.complex %>
 	<blockquote>
-		<%= render :partial => 'attrib_type', :collection => attrib_type.entry_type.attrib_types, :locals => { :entry_type_id => attrib_type.entry_type.id } %>
+		<!--%= render :partial => 'attrib_type', :collection => attrib_type.entry_type.attrib_types, :locals => { :entry_type_id => attrib_type.entry_type.id } %-->
 	</blockquote>
 	<% end %>
 </div>
