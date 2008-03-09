@@ -8,6 +8,9 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources :attrib_types
+  map.resources :entries do |entry|
+    entry.resources :attribs
+  end
 
   
 

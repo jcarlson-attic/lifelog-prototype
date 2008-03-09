@@ -1,0 +1,17 @@
+<h1>Edit Entry</h1>
+
+<%= error_messages_for :entry %>
+
+<% form_for(@entry) do |f| %>
+  <p>Created At:
+    <%= f.datetime_select :created_at %>
+  </p>
+
+  <p>Last Modified:
+    <%= f.datetime_select :updated_at %>
+  </p>
+
+  <p>
+    <%= f.submit "Edit" %>
+  </p>
+<% end %>

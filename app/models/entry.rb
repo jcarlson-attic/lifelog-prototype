@@ -28,10 +28,20 @@ class Entry < ActiveRecord::Base
     # Get the set of expected attribute types
     expected_types = entry_type.attrib_types
     
-    # Return false if an actual type is not found for each expected type
+    # Return set of missing attribute types
     missing = expected_types.select {|expected|
       nil == attribs.find(:first, :conditions => "attrib_type_id = #{expected.id}")
     }
+  end
+  
+  def to_s
+    if (nil == entry_type.template)
+      return attribs.join(", ")
+    else
+      return entry_type.template.gsub(/#\{(.*?)}/) {
+        attribs.find(:first, :joins => [:attrib_type], :conditions => ['attrib_types.name = ?',$1])
+      }
+    end
   end
   
 end

@@ -10,6 +10,11 @@
 	<%= @entry_type.complex %>
 </p>
 
+<p>
+	<b>Template:</b>
+	<%= @entry_type.template %>
+</p>
+
 <h3>Attributes Contained in this Entry Type</h3>
 <div>
 	<%= render :partial => 'attrib_type', :collection => @entry_type.attrib_types, :locals => { :entry_type_id => @entry_type.id } %>

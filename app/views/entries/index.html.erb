@@ -1,0 +1,27 @@
+<h1>List of Entries</h1>
+
+<table>
+	<thead>
+		<th>ID</th>
+		<th>EntryType</th>
+		<th>Actions</th>
+	</thead>
+	<tbody>
+		<% for entry in @entries %>
+			<tr>
+				<td><%= entry.id %></td>
+				<td><%= entry.entry_type.name %></td>
+				<td>
+					<%= link_to 'Show', entry %> |
+					<%= link_to 'Edit', edit_entry_path(entry) %> |
+					<%= link_to 'Delete', entry, :confirm => 'Are you sure?', :method => :delete %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+	
+</table>
+
+<p>
+	<%= link_to 'New', new_entry_path %>
+</p>

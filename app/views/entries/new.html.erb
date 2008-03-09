@@ -1,0 +1,21 @@
+<h1>New Entry</h1>
+
+<%= error_messages_for :entry %>
+
+<% form_for(@entry) do |f| %>
+  <p>Entry Type:
+    <%= f.select :entry_type_id, @entry_types, { :prompt => true } %>
+  </p>
+
+  <p>Created At:
+    <%= f.datetime_select :created_at %>
+  </p>
+
+  <p>Last Modified:
+    <%= f.datetime_select :updated_at %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>

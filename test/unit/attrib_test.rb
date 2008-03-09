@@ -39,7 +39,7 @@ class AttribTest < ActiveSupport::TestCase
   
   def test_attrib_value
     simple_attrib = Attrib.find(1)
-    assert_equal AttribValue.find(1).attrib_value, simple_attrib.display_text
+    assert_equal AttribValue.find(1).attrib_value, simple_attrib.to_s
   end
 
 end

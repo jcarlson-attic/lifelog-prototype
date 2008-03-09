@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 1) do
+ActiveRecord::Schema.define(:version => 2) do
 
   create_table "attrib_types", :force => true do |t|
     t.string   "name"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 1) do
     t.boolean  "complex"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "template"
   end
 
   create_table "entry_values", :force => true do |t|
