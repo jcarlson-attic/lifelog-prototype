@@ -6,15 +6,27 @@ class AttribsController < ApplicationController
   end
   
   def new
+    # The entry that will get this attribute
     @entry = Entry.find(params[:entry_id])
+    
+    # The attribute to be added to the Entry
     @attrib = @entry.attribs.new
-    @attrib_value = AttribValue.new
+    
+    # Filter the missing attributes to get just simple ones
     @attrib_types = @entry.missing.collect {|t| [ t.name, t.id ]}
+    
+    # And also get the complex ones
+    entry_options = @entry.missing.collect {|t| t.entry_type_id }
+    @entries = Entry.find(:all, :conditions => ['entry_type_id in (?)',entry_options]).collect {|t| [ t.to_s, t.id ]}
   end
   
   def create
     @attrib = Entry.find(params[:entry_id]).attribs.build(params[:attrib])
-    @attrib.value = AttribValue.new(params[:attrib_value])
+    if (@attrib.attrib_type.entry_type.complex)
+      @attrib.value = EntryValue.new(params[:entry_value])
+    else
+      @attrib.value = AttribValue.new(params[:attrib_value])
+    end
     
     respond_to do |format|
       if @attrib.save
