@@ -38,7 +38,7 @@ class Entry < ActiveRecord::Base
     if (nil == entry_type.template)
       return attribs.join(", ")
     else
-      return entry_type.template.gsub(/#\{(.*?)}/) {
+      return entry_type.template.gsub(/#\{(.*?)\}/) {
         attribs.find(:first, :joins => [:attrib_type], :conditions => ['attrib_types.name = ?',$1])
       }
     end

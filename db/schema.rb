@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 2) do
+ActiveRecord::Schema.define(:version => 3) do
 
   create_table "attrib_types", :force => true do |t|
     t.string   "name"
@@ -27,13 +27,10 @@ ActiveRecord::Schema.define(:version => 2) do
   add_index "attrib_types_entry_types", ["attrib_type_id", "entry_type_id"], :name => "index_attrib_types_entry_types_on_attrib_type_id_and_entry_type_id", :unique => true
 
   create_table "attrib_values", :force => true do |t|
-    t.integer  "attrib_id"
     t.string   "attrib_value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "attrib_values", ["attrib_id"], :name => "index_attrib_values_on_attrib_id", :unique => true
 
   create_table "attribs", :force => true do |t|
     t.integer  "entry_id"
@@ -59,12 +56,9 @@ ActiveRecord::Schema.define(:version => 2) do
   end
 
   create_table "entry_values", :force => true do |t|
-    t.integer  "attrib_id"
     t.integer  "attrib_entry_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "entry_values", ["attrib_id"], :name => "index_entry_values_on_attrib_id", :unique => true
 
 end

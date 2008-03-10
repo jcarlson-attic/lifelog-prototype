@@ -1,0 +1,19 @@
+<h1>Attribs for Entry</h1>
+
+<% for attrib in @attribs %>
+	<blockquote>
+		<b><%= attrib.attrib_type.name %>:</b>
+		<%= attrib %>
+	</blockquote>
+<% end %>
+
+<% if !@entry.complete %>
+
+	<h2>Missing Attribs</h2>
+	<ul>
+		<% for attrib_type in @entry.missing %>
+			<li><%= attrib_type.name %></li>
+		<% end %>
+	</ul>
+
+<% end %>

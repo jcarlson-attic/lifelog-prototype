@@ -3,14 +3,14 @@
 <table>
 	<thead>
 		<th>ID</th>
-		<th>EntryType</th>
+		<th>Entry</th>
 		<th>Actions</th>
 	</thead>
 	<tbody>
 		<% for entry in @entries %>
 			<tr>
 				<td><%= entry.id %></td>
-				<td><%= entry.entry_type.name %></td>
+				<td><%= entry %> (<%= entry.entry_type.name %>)</td>
 				<td>
 					<%= link_to 'Show', entry %> |
 					<%= link_to 'Edit', edit_entry_path(entry) %> |

@@ -1,0 +1,19 @@
+<h1>New Attrib for Entry</h1>
+
+<%= error_messages_for :attrib %>
+
+<% form_for(@attrib, :url => entry_attribs_path) do |f| %>
+  <p>
+  	<b>AttribType:</b>
+	<%= f.select :attrib_type_id, @attrib_types, {:prompt => true } %>
+  </p>
+  
+  <p>
+  	<b>AttribValue:</b>
+	<%= text_field :attrib_value, :attrib_value %>
+  </p>
+  
+  <p>
+  	<%= f.submit 'Create' %>
+  </p>
+<% end %>
